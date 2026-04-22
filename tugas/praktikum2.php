@@ -31,17 +31,14 @@ class Matematika {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Praktikum 2</title>
+    <title>Kalkulator Mini</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         body {
-            background: linear-gradient(135deg, #1d2671, #c33764);
+            background: linear-gradient(135deg, #0A1F44, #163a70);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -49,36 +46,32 @@ class Matematika {
         }
 
         .card-custom {
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            animation: fadeIn 0.7s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #ffffff;
         }
 
         .btn-custom {
-            background: #6c63ff;
+            background-color: #0A1F44;
             color: white;
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .btn-custom:hover {
-            background: #574fd6;
+            background-color: #06152e;
         }
 
         .hasil {
-            background: #f8f9ff;
+            background: #eef3ff;
             padding: 15px;
-            border-radius: 12px;
+            border-radius: 10px;
             margin-top: 15px;
         }
 
-        .title-icon {
-            color: #6c63ff;
+        h4 {
+            color: #0A1F44;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -87,17 +80,15 @@ class Matematika {
 
 <div class="card card-custom col-md-4">
 
-    <h4 class="text-center mb-3">
-        <i class="fas fa-calculator title-icon"></i> Kalkulator Sederhana
-    </h4>
+    <h4 class="text-center mb-3">Kalkulator Sederhana</h4>
 
     <form method="post">
         <div class="mb-2">
-            <input type="number" name="a" class="form-control" placeholder="Angka 1" required>
+            <input type="number" name="a" class="form-control" placeholder="Masukkan Angka" required>
         </div>
 
         <div class="mb-2">
-            <input type="number" name="b" class="form-control" placeholder="Angka 2" required>
+            <input type="number" name="b" class="form-control" placeholder="Masukkan Angka" required>
         </div>
 
         <div class="mb-3">
@@ -105,7 +96,7 @@ class Matematika {
         </div>
 
         <button type="submit" class="btn btn-custom w-100">
-            <i class="fas fa-play"></i> Hitung
+            Hitung
         </button>
     </form>
 
@@ -116,12 +107,12 @@ class Matematika {
         $sisi = $_POST['sisi'];
 
         echo "<div class='hasil'>";
-        echo "<h5><i class='fas fa-chart-bar'></i> Hasil:</h5>";
-        echo "➕ Tambah: " . Matematika::tambah($a, $b) . "<br>";
-        echo "➖ Kurang: " . Matematika::kurang($a, $b) . "<br>";
-        echo "✖️ Kali: " . Matematika::kali($a, $b) . "<br>";
-        echo "➗ Bagi: " . Matematika::bagi($a, $b) . "<br>";
-        echo "⬜ Luas Persegi: " . Matematika::luasPersegi($sisi);
+        echo "<h5>Hasil:</h5>";
+        echo "Tambah: " . Matematika::tambah($a, $b) . "<br>";
+        echo "Kurang: " . Matematika::kurang($a, $b) . "<br>";
+        echo "Kali: " . Matematika::kali($a, $b) . "<br>";
+        echo "Bagi: " . Matematika::bagi($a, $b) . "<br>";
+        echo "Luas Persegi: " . Matematika::luasPersegi($sisi);
         echo "</div>";
     }
     ?>
